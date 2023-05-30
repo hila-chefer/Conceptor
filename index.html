@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta property="og:title" content="The Hidden Language of Diffusion Models"/>
+  <meta property="og:url" content="https://conceptor.github.io/conceptor/"/>
+  <meta property="og:image" content="static/images/og_tag_header_image.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>The Hidden Language of Diffusion Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/crane.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <!-- <div class="columns is-centered"> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">The Hidden Language of Diffusion Models</h1>
+        </div>
+    </div>
+  </div>   
+</section>
+
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+		      <div class="is-size-3 publication-authors">
+          </div>
+          
+          <div class="is-size-3 publication-authors">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://hila-chefer.github.io/" target="_blank">Hila Chefer</a><sup>1,2</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=gypv57sAAAAJ" target="_blank">Oran Lang</a><sup>1</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="https://mega002.github.io/" target="_blank">Mor Geva</a><sup>3</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/volodymyr-polosukhin-b685511b9/" target="_blank">Volodymyr Polosukhin</a><sup>1</sup><span>&numsp;</span></span>
+            <br>
+            <span class="author-block"><a href="https://assafshocher.github.io/" target="_blank">Assaf Shocher</a><sup>1</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="http://www.weizmann.ac.il/math/irani/" target="_blank">Michal Irani</a><sup>1,4</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=ifCcZ5IAAAAJ&hl=en" target="_blank">Inbar Mosseri</a><sup>1</sup><span>&numsp;</span></span>
+            <span class="author-block"><a href="http://www.cs.tau.ac.il/~wolf/" target="_blank">Lior Wolf</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-7 publication-authors">
+            <span class="author-block"><sup>1</sup>Google Research</span><span>&numsp;</span>
+            <span class="author-block"><sup>2</sup>Tel Aviv University</span><span>&numsp;</span>
+            <span class="author-block"><sup>3</sup>Google DeepMind</span><span>&numsp;</span>
+            <span class="author-block"><sup>4</sup>Weizmann Institute</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+<!--            <span class="author-block">CONFERENCE</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Colab Link. -->
+              <span class="link-block">
+                <a href="" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+            </div>
+          </div>
+          <div class="is-size-6 publication-authors">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+      <div class="item">
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/teaser.gif" alt="Conceptor"/>
+        <b>Concept decomposition with <span class="small-caps">Conceptor </span></b>: Given a concept of interest (e.g., <i>a president</i>) and a text-to-image model, we generate a set of images to visually represent the concept. <span class="small-caps">Conceptor </span> then learns to decompose the concept into a small set of interpretable tokens, with the objective of reconstructing the generated images. The decomposition reveals interesting behaviors such as reliance on exemplars (e.g., <i>"Obama"</i>, <i>"Biden"</i>).
+    <br>
+        <b>Single image decomposition with <span class="small-caps">Conceptor </span>:</b> Our method enables various applications such as single image decomposition to tokens and allows us to naturally visualize each token in the decomposition. For example, <i>a snail</i> is decomposed into a combination of <i>ladybug</i> and <i>winding</i> due to the structure of its body, and the texture of its shell.
+	 </h2>
+	  </div>
+    </div>
+  </div>
+ <!--  </div> -->
+  </div>
+  </div>
+ <!--  </div> -->
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- div class="item">
+          <p style="margin-bottom: 30px">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/figures/video.mp4"
+          type="video/mp4">
+        </video>
+        </p>
+        </div -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image diffusion models have demonstrated an unparalleled ability to generate high-quality, diverse images from a textual concept (e.g., <i>"a doctor"</i>, <i>"love"</i>). However, the internal process of mapping text to a rich visual representation remains an enigma. In this work, we tackle the challenge of understanding concept representations in text-to-image models by decomposing an input text prompt into a small set of interpretable elements. This is achieved by learning a pseudo-token that is a sparse weighted combination of tokens from the model's vocabulary, with the objective of reconstructing the images generated for the given concept. Applied over the state-of-the-art Stable Diffusion model, this decomposition reveals non-trivial and surprising structures in the representations of concepts. For example, we find that some concepts such as <i>"a president"</i> or <i>"a composer"</i> are dominated by specific instances (e.g., <i>"Obama"</i>, <i>"Biden"</i>) and their interpolations. Other concepts, such as <i>"happiness"</i> combine associated terms that can be concrete (<i>"family"</i>, <i>"laughter"</i>) or abstract (<i>"friendship"</i>, <i>"emotion"</i>). In addition to peering into the inner workings of Stable Diffusion, our method also enables applications such as single-image decomposition to tokens, bias detection and mitigation, and semantic image manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title has-text-centered">Video</h2>-->
+<!--      <center>-->
+<!--        <iframe width="630" height="354" src="https://www.youtube.com/embed/9EWs2IX4cus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<!--      </center>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+  <!--<section class="section hero is-light">-->
+  <section class="section hero">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How does it work?</h2>
+        <div class="content has-text-justified">
+        </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/architecture.png" alt="cars peace" width="1000px"/>
+      </div>
+        <div class="content has-text-justified">
+          <p>
+         Given a text-to-image diffusion model (e.g., Stable Diffusion), and the concept of interest (e.g., <i>a president</i>), <span class="small-caps">Conceptor </span> learns to decompose the concept into a small set of interpretable tokens from the model's vocabulary. This is achieved by <i>mimicking</i> the training process of the model.
+            (1) We extract a training set of 100 images from the model using the concept prompt.
+            (2) A learned MLP network maps each word embedding w<sub>i</sub> from the model's vocabulary to its coefficient f(w<sub>i</sub>).
+            (3) We calculate the learned pseudo-token w<sup>*</sup><sub>N</sub> as a linear combination of the tokens in the vocabulary weighted by their learned coefficients.
+            (4) We sample a random noise for each of the training images, and noise the images accordingly.
+            (5) Using the learned pseudo-token w<sup>*</sup><sub>N</sub>, we apply the model's UNet to predict the added noise for each image.
+            (6) We compute two loss functions. <i>L</i><sub>reconstruct</sub> encourages the token w<sup>*</sup><sub>N</sub> to reconstruct the training images, and <i>L</i><sub>sparsity</sub> encourages the learned coefficients to be sparse.
+            (7) In inference time, we only consider the top 50 tokens rated by their coefficients to reconstruct the concept images.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title has-text-centered">Single Image Decomposition</span></h2>
+      <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <p>
+            Given a single image generated for the concept, <span class="small-caps">Conceptor </span> can decompose the image into its own set of corresponding tokens that cause the generation. We find that the model learns to rely on non-trivial, semantic connections between concepts. For example, a snake is decomposed to hose and a gecko such that the shape of its body is borrowed from the hose, and its head and skin texture is borrowed from the gecko.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div id="results-carousel" class="carousel results-carousel">
+         <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/snake.png" alt="snake" width="500px"/>
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/peppers.png" alt="Sweet peppers" width="500px"/>
+<!--        &emsp;&emsp;&emsp; <img src="static/figures/single_image/peppers.png" alt="Sweet peppers" width="500px"/>-->
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/oak.png" alt="oak" width="500px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/snail.png" alt="snail" width="500px"/>
+      </div>
+
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/wardrobe.png" alt="wardrobe" width="500px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/corn.png" alt="corn" width="500px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/dj.png" alt="dj" width="500px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/fear.png" alt="fear" width="500px"/>
+      </div>
+         <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/bee.png" alt="bee" width="500px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+          <img src="static/figures/single_image/castle.png" alt="castle" width="500px"/>
+        </div>
+          <div class="column is-centered has-text-centered">
+        <img src="static/figures/single_image/painter.png" alt="painter" width="500px"/>
+            <span><br><br> </span>
+      </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+  <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h6 class="title has-text-centered">Concepts with Dual Meaning</span></h6>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <p>
+            We conduct experiments using concepts with dual meaning (e.g., <i>a crane</i> is a type of bird and also a construction tool), and manipulate the token that controls one of the meanings. We observe that even when only one object is generated, the image relies on both meanings of the concept (e.g., the crane is shaped as a bird's head). These examples demonstrate that the model entangles both meanings of the concept semantically to create the resulting image.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div id="results-carousel" class="carousel results-carousel">
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/crane.png" alt="Crane" width="700px"/>
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/apple.png" alt="Big apple" width="700px"/>
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/bass.png" alt="bass" width="700px"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/date.png" alt="date" width="700px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/date2.png" alt="date" width="700px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/bi_literal/bass2.png" alt="bass" width="700px"/>
+          <span><br><br></span>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+  <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h6 class="title has-text-centered">Concept Manipulation</h6>
+      <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <p>
+            Our method enables fine-grained concept manipulation by modifying the coefficient corresponding to a token of interest. For example, by manipulating the coefficient corresponding to the token <i>abstract</i> in the decomposition of the concept <i>sculpture</i>, we can make an input sculpture more or less abstract.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/abstract.png" alt="sculpture" width="700px"/>
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/playground.png" alt="park" width="700px"/>
+      </div>
+	  <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/nerdy.png" alt="professor" width="700px"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/dolomites.png" alt="mountain" width="700px"/>
+      </div>
+         <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/trump.png" alt="president" width="700px"/>
+      </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/manipulation/christmas.png" alt="winter" width="700px"/>
+          <span><br><br></span>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; <p style="margin-top: 30px; margin-bottom: 30px"> &ndash;&gt;-->
+<!--      <h2 class="title has-text-centered">Using Cross-Attention as Explanation</h2>-->
+<!--      &lt;!&ndash; </p> &ndash;&gt;-->
+<!--      -->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--        <div class="column is-centered has-text-centered">-->
+<!--        <img src="static/figures/expl_cat_frog.png" width="400" class="is-centered"/>-->
+<!--        </div>-->
+<!--        <div class="column is-centered has-text-centered">-->
+<!--        <img src="static/figures/expl_elephant_crown.png" width="400" class="is-centered"/>-->
+<!--        </div>-->
+<!--		<div class="column is-centered has-text-centered">-->
+<!--        <img src="static/figures/expl_turtle_bowl.png" width="400" class="is-centered"/>-->
+<!--        </div>-->
+<!--		<div class="column is-centered has-text-centered">-->
+<!--        <img src="static/figures/expl_backpack_glasses.png" width="400" class="is-centered"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</section>-->
+
+
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper poster &ndash;&gt;-->
+
+<!--      <h2 class="title has-text-centered">Uncurated Results</h2>-->
+<!--      <p style="margin-top: 30px; margin-bottom: 30px">-->
+<!--      &lt;!&ndash; <div class="column is-four-fifths"> &ndash;&gt;-->
+<!--          <div class="column is-centered has-text-centered">-->
+<!--        <img src="static/figures/uncurated.jpg" alt="cars peace" width="500px"/>-->
+<!--      </div>-->
+<!--       </p>-->
+<!--		<h2 class="subtitle is-centered has-text-centered">-->
+<!--          Uncurated results with the same 8 random seeds comparing Stable Diffusion and Attend-and-Excite.-->
+<!--        </h2>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </section> -->
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+
+  <script type="text/javascript">
+    var sc_project=12351448; 
+    var sc_invisible=1; 
+    var sc_security="c676de4f"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+    alt="Web Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
