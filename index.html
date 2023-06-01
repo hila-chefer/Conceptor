@@ -94,7 +94,7 @@
 
               <!-- Colab Link. -->
               <span class="link-block">
-                <a href="" target="_blank"
+                <a href="https://github.com/hila-chefer/Conceptor" target="_blank"
                 class="external-link button is-normal is-rounded">
                 <span class="icon">
                   <i class="fab fa-github"></i>
@@ -121,9 +121,12 @@
       <div class="item">
       <div class="column is-centered has-text-centered">
         <img src="static/figures/teaser.gif" alt="Conceptor"/>
-        <b>Concept decomposition with <span class="small-caps">Conceptor </span></b>: Given a concept of interest (e.g., <i>a president</i>) and a text-to-image model, we generate a set of images to visually represent the concept. <span class="small-caps">Conceptor </span> then learns to decompose the concept into a small set of interpretable tokens, with the objective of reconstructing the generated images. The decomposition reveals interesting behaviors such as reliance on exemplars (e.g., <i>"Obama"</i>, <i>"Biden"</i>).
-    <br>
-        <b>Single image decomposition with <span class="small-caps">Conceptor </span>:</b> Given a single image from the concept, our method extracts the tokens in the decomposition that caused the generation of the image. For example, <i>a snail</i> is decomposed into a combination of <i>ladybug</i> and <i>winding</i> due to the structure of its body, and the texture of its shell.
+        <b>Explaining diffusion models with <span class="small-caps">Conceptor</span>.</b>
+        Our goal is to understand how a textual concept is represented by the model.
+        <br><p style="margin:8px;"></p>
+        <b>Concept decomposition with <span class="small-caps">Conceptor</span></b>: Given a concept (e.g., <i>a president</i>), and a text-to-image model, <span class="small-caps">Conceptor </span> learns to decompose the concept into a small set of interpretable tokens, with the objective of reconstructing the images generated for the concept. The decomposition reveals interesting behaviors such as reliance on exemplars (e.g., <i>"Obama"</i>, <i>"Biden"</i>).
+    <br><p style="margin:8px;"></p>
+        <b>Single image decomposition with <span class="small-caps">Conceptor</span>:</b> Given a single image from the concept, our method extracts the tokens in the decomposition that caused the generation of the image. For example, a snail is decomposed into a <i>ladybug</i> and <i>winding</i>.
 	 </h2>
 	  </div>
     </div>
@@ -184,11 +187,11 @@
       </div>
         <div class="content has-text-justified">
           <p>
-         Given a text-to-image diffusion model (e.g., Stable Diffusion), and the concept of interest (e.g., <i>a president</i>), <span class="small-caps">Conceptor </span> learns to decompose the concept into a small set of interpretable tokens from the model's vocabulary. This is achieved by <i>mimicking</i> the training process of the model.
+         Given a text-to-image diffusion model (e.g., Stable Diffusion), and the concept of interest (e.g., <i>a president</i>), <span class="small-caps">Conceptor </span> learns to decompose the concept into a small set of human-interpretable tokens from the model's vocabulary. This is achieved by <i>mimicking</i> the training process of the model.
             (1) We extract a training set of 100 images from the model using the concept prompt.
             (2) A learned MLP network maps each word embedding w<sub>i</sub> from the model's vocabulary to its coefficient f(w<sub>i</sub>).
             (3) We calculate the learned pseudo-token w<sup>*</sup><sub>N</sub> as a linear combination of the tokens in the vocabulary weighted by their learned coefficients.
-            (4) We sample a random noise for each of the training images, and noise the images accordingly.
+            (4) We sample a random noise for each of the training images and noise the images accordingly.
             (5) Using the learned pseudo-token w<sup>*</sup><sub>N</sub>, we apply the model's UNet to predict the added noise for each image.
             (6) We compute two loss functions. <i>L</i><sub>reconstruct</sub> encourages the token w<sup>*</sup><sub>N</sub> to reconstruct the training images, and <i>L</i><sub>sparsity</sub> encourages the learned coefficients to be sparse.
             (7) In inference time, we only consider the top 50 tokens rated by their coefficients to reconstruct the concept images.
@@ -238,7 +241,7 @@
       <div class="column is-four-fifths">
         <div class="content has-text-centered">
           <p>
-            Given a single image generated for the concept, <span class="small-caps">Conceptor </span> can decompose the image into its own set of corresponding tokens that cause the generation. We find that the model learns to rely on non-trivial, semantic connections between concepts. For example, a snake is decomposed to hose and a gecko such that the shape of its body is borrowed from the hose, and its head and skin texture is borrowed from the gecko.
+            Given a single image generated for the concept, <span class="small-caps">Conceptor </span> can decompose the image into its own set of corresponding tokens that cause the generation. We find that the model learns to rely on non-trivial, semantic connections between concepts. For example, a snake is decomposed to a hose and a gecko such that the shape of its body is borrowed from the hose, and its head and skin texture are borrowed from the gecko.
             </p>
         </div>
       </div>
@@ -291,12 +294,12 @@
   <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h6 class="title has-text-centered">Concepts with Dual Meaning</span></h6>
+      <h6 class="title has-text-centered">Double-Meaning Concepts</span></h6>
       <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-centered">
           <p>
-            We conduct experiments using concepts with dual meaning (e.g., <i>a crane</i> is a type of bird and also a construction tool), and manipulate the token that controls one of the meanings. We observe that even when only one object is generated, the image relies on both meanings of the concept (e.g., the crane is shaped as a bird's head). These examples demonstrate that the model entangles both meanings of the concept semantically to create the resulting image.
+            We conduct experiments using concepts with a dual meaning (e.g., <i>a crane</i> is a type of bird and also a construction tool) and manipulate the token that controls one of the meanings. We observe that even when only one object is generated, the image relies on both meanings of the concept (e.g., the crane is shaped like a bird's head). These examples demonstrate that the model entangles both meanings of the concept semantically to create the resulting image.
             </p>
         </div>
       </div>
