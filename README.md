@@ -33,3 +33,13 @@ Given a concept of interest (e.g., a president) and a text-to-image model, we ge
 <br>
  Our method enables fine-grained concept manipulation by modifying the coefficient corresponding to a token of interest. For example, by manipulating the coefficient corresponding to the token abstract in the decomposition of the concept sculpture, we can make an input sculpture more or less abstract.
 </p>
+
+## Citing our paper
+If you make use of our work, please cite our paper:
+```
+@article{chefer2023hidden,
+        title={The Hidden Language of Diffusion Models},
+        author={Chefer, Hila and Lang, Oran and Geva, Mor and Polosukhin, Volodymyr and Shocher, Assaf and Irani, Michal and Mosseri, Inbar and Wolf, Lior},
+        journal={arXiv preprint arXiv:2306.00966},
+        year={2023}
+```
