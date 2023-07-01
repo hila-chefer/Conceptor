@@ -37,7 +37,7 @@ Given a concept of interest (e.g., a president) and a text-to-image model, we ge
 ## Citing our paper
 If you make use of our work, please cite our paper:
 ```
-@misc{2306.00966,
+@misc{chefer2023hidden,
     Author = {Hila Chefer and Oran Lang and Mor Geva and Volodymyr Polosukhin and Assaf Shocher and Michal Irani and Inbar Mosseri and Lior Wolf},
     Title = {The Hidden Language of Diffusion Models},
     Year = {2023},
