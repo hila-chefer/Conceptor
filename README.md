@@ -15,21 +15,21 @@ Official implementation of The Hidden Language of Diffusion Models.
 
 ## Concept Explanation with Conceptor
 <p align="center">
-<img src="docs/part2.png" width="800px"/>  
+<img src="docs/part2.jpg" width="800px"/>  
 <br>
 Given a concept of interest (e.g., a president) and a text-to-image model, we generate a set of images to visually represent the concept. Conceptor then learns to decompose the concept into a small set of interpretable tokens, with the objective of reconstructing the generated images. The decomposition reveals interesting behaviors such as reliance on exemplars (e.g., "Obama", "Biden").
 </p>
 
 ## Single-image Decomposition with Conceptor
 <p align="center">
-<img src="docs/part3.png" width="800px"/>  
+<img src="docs/part3.jpg" width="800px"/>  
 <br>
  Given a single image from the concept, our method extracts the tokens in the decomposition that caused the generation of the image. For example, a snail is decomposed into a combination of ladybug and winding due to the structure of its body, and the texture of its shell.
 </p>
 
 ## Concept Manipulation with Conceptor
 <p align="center">
-<img src="docs/manipulation.png" width="600px"/>  
+<img src="docs/manipulation.jpg" width="600px"/>  
 <br>
  Our method enables fine-grained concept manipulation by modifying the coefficient corresponding to a token of interest. For example, by manipulating the coefficient corresponding to the token abstract in the decomposition of the concept sculpture, we can make an input sculpture more or less abstract.
 </p>
