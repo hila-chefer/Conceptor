@@ -13,7 +13,6 @@
 ## Description  
 Official implementation of the paper The Hidden Language of Diffusion Models. The paper proposes a method dubbed <i>Conceptor</i> to produce explanations for text-to-image diffusion models.
  <br>
- <b>Code coming soon!</b>
 
 ## Concept Explanation with Conceptor
 <p align="center">
