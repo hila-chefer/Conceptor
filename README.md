@@ -1,4 +1,4 @@
-# The Hidden Language of Diffusion Models
+# The Hidden Language of Diffusion Models [ICLR'24]
 
 <p align="center">
 <img src="docs/part1.gif" width="800px"/> 
